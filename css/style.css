@@ -531,7 +531,7 @@ img {
     aspect-ratio: 2/1;
     max-width: initial;
     min-height: initial;
-    top: 100%;
+    top: calc(100vh + 22.5rem - 265px);
     left: 50%;
     -webkit-transform: translate(-50%, 0);
         -ms-transform: translate(-50%, 0);
