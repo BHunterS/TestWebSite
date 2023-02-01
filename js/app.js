@@ -13,20 +13,10 @@
             document.documentElement.classList.add(className);
         }));
     }
-    let addWindowScrollEvent = false;
-    setTimeout((() => {
-        if (addWindowScrollEvent) {
-            let windowScroll = new Event("windowScroll");
-            window.addEventListener("scroll", (function(e) {
-                document.dispatchEvent(windowScroll);
-            }));
-        }
-    }), 0);
     const mainSection = document.querySelector(".main");
     document.addEventListener("scroll", (() => {
         const scrollTop = window.scrollY;
-        if (scrollTop >= 20) mainSection.classList.add("_scrolled"); else mainSection.classList.remove("_scrolled");
+        mainSection.classList.toggle("_scrolled", scrollTop >= 20);
     }));
-    window["FLS"] = true;
     isWebp();
 })();
